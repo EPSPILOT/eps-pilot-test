@@ -1070,3 +1070,10 @@ body:has(#view){background:linear-gradient(180deg,#f4f8fc 0%,#eaf3fa 100%)!impor
   .mobile-nav-overlay{display:none;background:rgba(3,15,34,.55);z-index:50;}
   .mobile-nav-overlay.open{display:block;}
 }
+
+/* ===== Correctif marge .main sur mobile — plusieurs anciennes règles fixaient
+   .main / .rtl .main avec des marges (ex: margin-right:230px) qui n'étaient jamais
+   réinitialisées à <=720px, poussant tout le contenu hors de l'écran en RTL. ===== */
+@media (max-width:720px){
+  .main,.rtl .main{margin:0!important;width:100%!important;}
+}
